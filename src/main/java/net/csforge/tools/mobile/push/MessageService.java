@@ -171,6 +171,10 @@ public class MessageService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		if (message.getBadge() <= 0)
+			message.setBadge(1);
+		if (message.getSound() == null)
+			message.setSound("default");
 		sendAPNS(message.getMessage(), message.getBadge(), message.getSound(), map, tokens);
 	}
 	
