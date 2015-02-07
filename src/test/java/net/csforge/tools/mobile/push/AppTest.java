@@ -37,7 +37,7 @@ public class AppTest {
 			return;
 		new Thread(new Runnable(){
 			public void run() {
-				MessageService.getService().push(MessageService.APPLE, 
+				MessageService.getService().push(MessageService.IOS, 
 						new Message(modelId, message), token);
 			}
 		}).start();

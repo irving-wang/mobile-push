@@ -27,7 +27,7 @@ import com.notnoop.apns.PayloadBuilder;
 
 public class MessageService {
 	private static Logger logger = LoggerFactory.getLogger(MessageService.class);
-	public static int APPLE = 1;
+	public static int IOS = 1;
 	public static int ANDROID = 2;
 	public static String APNS_CERTIFICATE_PATH = "apns.certificate.path";
 	public static String APNS_CERTIFICATE_PASSWORD = "apns.certificate.password";
@@ -77,7 +77,7 @@ public class MessageService {
 	}
 	
 	public void push(int mobile, String message, Object data, String... tokens) {
-		if (mobile == APPLE) {
+		if (mobile == IOS) {
 			if (enabledAPNS) {
 //				sendAPNS(new Message(message, 1, "default", data), tokens);
 				sendAPNS(new Message(message, 1, "default", null), data, tokens);
@@ -91,7 +91,7 @@ public class MessageService {
 	}
 	
 	public void push(int mobile, Message message, String... tokens) {
-		if (mobile == APPLE) {
+		if (mobile == IOS) {
 			if (enabledAPNS){
 				sendAPNS(message, tokens);
 			}
